@@ -1,0 +1,35 @@
+.shirt-list {
+    text-align: center;
+}
+
+.shirt-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.shirt-item {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.shirt-item.selected {
+    border-color: #007bff;
+    transform: scale(1.1);
+}
+
+.shirt-item:hover {
+    border-color: #007bff;
+    transform: scale(1.05);
+}
+
+.shirt-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}

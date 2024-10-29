@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { CssBaseline, Typography } from '@mui/material';
+import ShirtSelector from './components/ShirtSelector';
+import UploadShirt from './components/UploadShirt';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <CssBaseline />
+            <div style={{ backgroundColor: '#f0f4f8', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+                <Typography variant="h3" gutterBottom style={{ color: '#333' }}>
+                    Virtual TryOn
+                </Typography>
+                <UploadShirt />
+                <ShirtSelector />
+            </div>
+        </>
+    );
 }
 
 export default App;
