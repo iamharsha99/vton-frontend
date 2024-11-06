@@ -2,7 +2,6 @@
 import React from 'react';
 import { CssBaseline, Typography } from '@mui/material';
 import ShirtSelector from './components/ShirtSelector';
-import UploadShirt from './components/UploadShirt';
 
 function App() {
     return (
@@ -12,7 +11,6 @@ function App() {
                 <Typography variant="h3" gutterBottom style={{ color: '#333' }}>
                     Virtual TryOn
                 </Typography>
-                <UploadShirt />
                 <ShirtSelector />
             </div>
         </>

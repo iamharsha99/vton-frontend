@@ -2,19 +2,28 @@ import React, { useState } from 'react';
 import api from '../api';
 import { Button, Container, TextField, Typography, Paper } from '@mui/material';
 
-function UploadShirt() {
+function UploadShirt({ refreshShirts }) {
     const [file, setFile] = useState(null);
 
     const uploadShirt = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('file', file);
-        await api.post('/upload_shirt', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-        setFile(null);
+
+        try {
+            await api.post('/upload_shirt', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            setFile(null);
+            // Refresh the shirt list after successful upload
+            if (refreshShirts) {
+                refreshShirts();
+            }
+        } catch (error) {
+            console.error("Error uploading shirt:", error);
+        }
     };
 
     return (
